@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stocks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />    
+    
+    <style>
+        .button {
+          border-radius: 4px;
+          background-color: #f4511e;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 28px;
+          padding: 30px;
+          width: 350px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 25px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }   
+    </style>
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Today's Stock Price
+                </h1>
+            </div>
+        </div>
+    </section>
+    <div class="page-header header-filter" >
+    <!--  <section class="section" style="background-image: url('s1.jpg')">
+        --><div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    
+                        <div class="field has-addons">
+                            <div class="control">
+                               <a href="{% url 'us_stocks' %}" class="button">
+                                <span>US Companies</span></a>                              
+                            </div>
+                        </div>
+                        <div class="field has-addons">
+                            <div class="control">
+                                <a href="{% url 'india_stocks' %}" class="button">
+                                <span>Indian Companies </span></a>
+                            </div>
+                        </div>
+                        <div class="field has-addons">
+                            <div class="control">
+                                <a href="{% url 'crypto_stocks' %}" class="button">
+                                <span>Cryptocurrency </span></a>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+</body>
